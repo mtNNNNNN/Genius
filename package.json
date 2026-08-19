@@ -1,0 +1,14 @@
+{
+  "name": "logimemory",
+  "version": "1.0.0",
+  "description": "Jogo da memória multiplayer para gamificação de logística/ADM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

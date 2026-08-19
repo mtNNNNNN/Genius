@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LogiMemory</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <h1>📦 LogiMemory</h1>
+      <p>Gamificação • Controle e Logística</p>
+    </div>
+    <div id="roomBadge"></div>
+  </header>
+
+  <main id="home">
+    <section class="card">
+      <h2>Entrar no jogo</h2>
+      <input id="name" maxlength="18" placeholder="Seu nome">
+      <input id="code" maxlength="12" placeholder="Código da sala" value="ADM">
+      <button id="join">Entrar</button>
+      <button id="display" class="secondary">Abrir tela da TV</button>
+      <p class="hint">Na apresentação, abra a tela da TV no computador conectado à TV. Os alunos entram pelo celular.</p>
+    </section>
+  </main>
+
+  <main id="player" class="hidden">
+    <section class="card center">
+      <h2 id="status">Aguardando...</h2>
+      <div class="colorGrid">
+        <button class="color red" data-color="red">🔴</button>
+        <button class="color green" data-color="green">🟢</button>
+        <button class="color blue" data-color="blue">🔵</button>
+        <button class="color yellow" data-color="yellow">🟡</button>
+      </div>
+      <p>Repita a sequência exibida na TV.</p>
+    </section>
+  </main>
+
+  <main id="screen" class="hidden">
+    <section class="screenLayout">
+      <div class="gamePanel">
+        <h2 id="screenStatus">LogiMemory</h2>
+        <div id="sequence" class="sequence">Pronto?</div>
+        <button id="start" class="start">▶ INICIAR</button>
+        <div id="qrBox" class="qrBox">
+          <div id="qr"></div>
+          <small>Escaneie para entrar</small>
+        </div>
+      </div>
+      <aside class="ranking">
+        <h2>🏆 Ranking</h2>
+        <div id="rankingList">Aguardando jogadores...</div>
+      </aside>
+    </section>
+  </main>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
